@@ -8,10 +8,11 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 627220E7
 
 RUN apt-get update
 
+RUN apt-get install -y scrapyd
 RUN apt-get install -y python-pip python-dev build-essential libssl-dev
 
 RUN pip install --upgrade pip 
-RUN pip install scrapy
+RUN pip install scrapyd
 
 COPY startup.sh .
 RUN chmod +x startup.sh
