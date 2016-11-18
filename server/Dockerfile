@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install scrapyd
 
-COPY /startup.sh .
+COPY ../startup.sh .
 RUN chmod +x startup.sh
 
 EXPOSE 6800
