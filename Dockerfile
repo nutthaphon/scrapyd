@@ -13,9 +13,6 @@ RUN apt-get install -y python-pip python-dev build-essential libssl-dev
 RUN pip install --upgrade pip 
 RUN pip install scrapy
 
-COPY startup.sh .
-RUN chmod +x startup.sh
-
-EXPOSE 6800
-
-CMD "./startup.sh"
+RUN scrapy startproject tutorial
+COPY quotes_spider.py tutorial/tutorial/spiders
+RUN scrapy crawl quotes
