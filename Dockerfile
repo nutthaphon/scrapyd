@@ -4,10 +4,9 @@ MAINTAINER Nutthaphon Suwanwong
 RUN (mv /etc/localtime /etc/localtime.old; ln -s /usr/share/zoneinfo/Asia/Bangkok /etc/localtime)
 
 RUN apt-get update
-RUN apt-get install -y python-pip python-dev build-essential
+RUN apt-get install -y python-pip python-dev build-essential libssl-dev
 RUN pip install --upgrade pip 
 RUN pip install scrapy
-RUN scrapy startproject tutorial
 
 COPY startup.sh .
 RUN chmod +x startup.sh
