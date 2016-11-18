@@ -16,9 +16,6 @@ RUN apt-get -f install
 
 RUN apt-get install -y scrapyd
 
-RUN pip install --upgrade pip 
-RUN pip install scrapyd
-
 COPY startup.sh .
 RUN chmod +x startup.sh
 
