@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
 	python-pip \
 	python-dev \
 	build-essential \
-	libssl-dev
+	libssl-dev \
+	libffi-dev
 
 RUN pip install --upgrade pip && pip install scrapy
 
