@@ -15,6 +15,7 @@ RUN dpkg -i python-support_1.0.15_all.deb
 RUN apt-get -f install
 
 RUN apt-get install -y scrapyd
+RUN apt-get install -y python-pip
 
 COPY startup.sh .
 RUN chmod +x startup.sh
