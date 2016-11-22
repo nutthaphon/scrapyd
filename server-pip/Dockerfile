@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
 	libssl-dev \
 	wget \
 	curl \
-	zip
+	zip \
+	git
 
 RUN pip install --upgrade pip
 RUN pip install scrapyd
