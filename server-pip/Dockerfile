@@ -27,7 +27,5 @@ WORKDIR /home/scrapyd
 RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python - --user
 RUN wget https://github.com/scrapy/scrapyd-client/archive/master.zip
 RUN unzip master.zip
-RUN cd projects && scrapy startproject tutorial
-
 
 EXPOSE 6800
