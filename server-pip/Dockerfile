@@ -21,7 +21,9 @@ RUN pip install scrapyd
 RUN groupadd scrapyd
 RUN useradd -m -s /bin/bash -g scrapyd scrapyd
 
-USER scrapy
+USER scrapyd
+WORKDIR /home/scrapyd
+
 RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python - --user
 
 
