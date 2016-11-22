@@ -10,12 +10,19 @@ RUN apt-get update && apt-get install -y \
 	libxslt1-dev \
 	zlib1g-dev \
 	libffi-dev \
-	libssl-dev
+	libssl-dev \
+	wget \
+	curl \
+	zip
 
 RUN pip install --upgrade pip
 RUN pip install scrapyd
 
 RUN groupadd scrapyd
 RUN useradd -m -s /bin/bash -g scrapyd scrapyd
+
+USER scrapy
+RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python - --user
+
 
 EXPOSE 6800
