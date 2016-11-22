@@ -23,6 +23,7 @@ RUN useradd -m -s /bin/bash -g scrapyd scrapyd
 
 USER scrapyd
 WORKDIR /home/scrapyd
+COPY scrapyd.conf .
 
 RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python - --user
 RUN wget https://github.com/scrapy/scrapyd-client/archive/master.zip
