@@ -15,10 +15,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pip
 RUN pip install scrapyd
 
-COPY scrapyd.conf .
-COPY startup.sh . 
-RUN chmod +x startup.sh
+RUN groupadd scrapyd
+RUN useradd -m -s /bin/bash -g scrapyd scrapyd
 
 EXPOSE 6800
-
-CMD "./startup.sh"
